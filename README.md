@@ -1,4 +1,4 @@
-# Hashing Application
+# HashQuest
 
 <div style="display: flex; justify-content: space-around;">
   <div style="text-align: center;">
