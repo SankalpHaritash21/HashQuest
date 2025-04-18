@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased bg-black;
+    font-family: "Share Tech Mono", monospace;
+  }
+}
+
+@layer components {
+  .tron-border {
+    @apply relative;
+    box-shadow: 0 0 10px theme("colors.tron.glow"),
+      inset 0 0 10px theme("colors.tron.glow");
+    border: 1px solid theme("colors.tron.accent");
+  }
+
+  .tron-text {
+    @apply text-tron-text;
+    text-shadow: 0 0 10px theme("colors.tron.glow");
+  }
+
+  .tron-grid {
+    background-size: 50px 50px;
+    background-image: linear-gradient(
+        to right,
+        theme("colors.tron.grid") 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, theme("colors.tron.grid") 1px, transparent 1px);
+  }
+
+  .tron-button {
+    @apply relative px-8 py-3 bg-black text-tron-text border border-tron-accent 
+           hover:bg-tron-accent/10 transition-all duration-300 uppercase tracking-wider;
+    box-shadow: 0 0 10px theme("colors.tron.glow");
+  }
+
+  .tron-input {
+    @apply bg-black/50 border border-tron-accent text-tron-text px-4 py-2
+           focus:outline-none focus:ring-2 focus:ring-tron-accent focus:border-transparent;
+    box-shadow: 0 0 10px theme("colors.tron.glow");
+  }
+}
